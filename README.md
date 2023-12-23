@@ -324,10 +324,53 @@ Xử lý ngôn ngữ tự nhiên: Học tập liên tục được sử dụng t
 ### 2.2 Test Production
 
 *2.2.1 Giới thiệu*
-
 Các bài kiểm tra học máy có thể được phân thành hai loại: bài kiểm tra phần mềm tiêu chuẩn và bài kiểm tra học máy (ML). Kiểm tra phần mềm đánh giá logic bằng văn bản, trong khi kiểm tra ML đánh giá logic đã học.
+
 Các bài kiểm tra ML có thể được chia thành hai thành phần riêng biệt: kiểm tra và đánh giá. Chúng tôi đã làm quen với đánh giá ML, bao gồm việc đào tạo một mô hình và đánh giá hiệu suất của nó trên một bộ xác thực chưa từng thấy trước đây. Đánh giá này được thực hiện bằng cách sử dụng các số liệu như độ chính xác và Vùng dưới đường cong của đặc tính hoạt động của máy thu (AUC ROC), cũng như đồ họa như đường cong thu hồi chính xác
+
 Ngược lại, thử nghiệm ML đòi hỏi phải đánh giá hành vi của mô hình. Các bài kiểm tra đào tạo trước, có thể được thực hiện mà không cần dạy các tham số, xác minh tính chính xác của logic bằng văn bản của chúng tôi. Chẳng hạn, xác suất phân loại có bị giới hạn trong phạm vi từ 0 đến 1 không? Đánh giá sau đào tạo đánh giá mức độ phù hợp của lý luận thu được với kết quả dự kiến. Trên tập dữ liệu Titanic, thật hợp lý khi dự đoán rằng phụ nữ sẽ có khả năng sống sót cao hơn so với nam giới.
+
+*2.2.2 Quá trình thử nghiệm*
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/619bf6ea-6631-4335-8e14-fd7de7fa8d31)
+
+2.2.2.1 Đánh giá mô hình
+Đánh giá mô hình là giai đoạn 0 của thử nghiệm mô hình và chỉ giới hạn ở chức năng của mô hình. Dưới đây là số liệu cho từng loại mô hình để đánh giá chất lượng của nó. Đối với các tập dữ liệu không cân bằng, điểm F1 và điểm AUC là tốt nhất để phân loại và đối với dữ liệu nặng ngoại lệ, MAE sẽ tốt hơn cho hồi quy. Đối với một số mô hình như mô hình giám sát dựa trên cây quyết định tổng hợp (XGBoost, RF). SHAP có thể được sử dụng để hiểu logic dự đoán như mô hình hộp đen ở chế độ xem tổng thể và LIME để kiểm tra các trường hợp cụ thể là gì
+
+2.2.2.2 Pre-Training Test/ Unit Testing
+Trước quá trình đào tạo theo cả phương pháp học trực tuyến và theo đợt, việc kiểm tra đơn vị được tiến hành để đảm bảo rằng phần mềm/mô hình đáp ứng các tiêu chí cần thiết, chẳng hạn như định dạng dữ liệu chính xác và đủ dữ liệu.
+
+2.2.2.3 Post Training Test-Batch Vs Online Learning
+Bài kiểm tra sau đào tạo được thực hiện sau khi hoàn thành khóa đào tạo về học theo đợt, trong khi nó được thực hiện trong quá trình đào tạo học trực tuyến.
+
+Kiểm tra độ trễ: Kiểm tra xem dự đoán có được tạo ra trong vòng một phần giây hay không để mô hình có thể mở rộng và quản lý lưu lượng. Nếu mất hơn một phút, phần lớn thiết kế mô hình cần phải được thay đổi. Bài kiểm tra này đặc biệt quan trọng nếu nó là một kỹ thuật học máy trực tuyến. Một cách để giải quyết vấn đề này trong học trực tuyến là xác định siêu tham số là giá trị tĩnh và không sử dụng cv tìm kiếm dạng lưới để điều chỉnh tham số mỗi khi có dữ liệu mới vì nó có thể làm tăng độ trễ. Do đó, giá trị tĩnh của siêu tham số có thể được phát hiện bằng cách chạy tập dữ liệu được lấy mẫu/tập hợp con và huấn luyện mô hình bằng cách sử dụng các phương pháp như cv tìm kiếm ngẫu nhiên để thu được các tham số tối ưu dựa trên dữ liệu xác thực đa số
+
+Kiểm tra tải: Kiểm tra xem mô hình có thể xử lý bao nhiêu dữ liệu kiểm tra cùng một lúc. Điều này rất quan trọng cho cả việc học theo đợt và học trực tuyến. Một cách tiếp cận là sử dụng SQLalchemy để xác minh xem tất cả DB (cơ sở dữ liệu) có được truy cập song song hay không, điều này sẽ cho phép xử lý lượng dữ liệu khổng lồ. Ngoài ra, bộ chứa AWS còn giúp giám sát CPU/bộ nhớ. Locust là một công cụ để tự động hóa việc kiểm tra này
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/721dd999-57e3-4ad6-9766-af73c60c7321)
+
+2.2.2.4 A/B testing
+
+Với một số mô hình ML/AI nhất định, theo thời gian, các tính năng của dữ liệu sẽ thay đổi, do đó mô hình được đào tạo trên dữ liệu cũ không thể hoạt động tốt với dữ liệu mới. Điều này được gọi là sự trôi dạt dữ liệu. Tương tự, hiện tượng trôi dạt ý tưởng xảy ra khi các giả định do mô hình học máy tạo ra không còn đúng trong dữ liệu trong thế giới thực mà nó đáp ứng sau khi triển khai.
+Vì vậy, việc đào tạo lại là điều cần thiết sau khi triển khai ML. Thử nghiệm A/B giúp xác định xem phiên bản mới của mô hình có nên thay thế phiên bản cũ hay không.
+Trong thử nghiệm A/B (được AWS Sagemaker hỗ trợ tự động), 80% lưu lượng truy cập được cung cấp cho mô hình ml hiện tại/cũ trong khi 20% lưu lượng truy cập (đối thủ) được cung cấp cho mô hình mới. Dựa trên (các) số liệu cơ sở, mô hình mới có thể thay thế mô hình cũ nếu mô hình mới hoạt động tốt hơn.
+
+2.2.2.5 Stage test/ Shadow test
+
+Thử nghiệm Giai đoạn là một trong những thử nghiệm cuối cùng để xác định xem liệu mô hình có mang lại kết quả như mong đợi hay không. Thử nghiệm này diễn ra sau quá trình dockerization và AWS containerization để triển khai tự động trong các quy trình như Bitbucket và GitLab. Phần này chứa nhiều dữ liệu thử nghiệm khác nhau (bao gồm các kịch bản rộng lớn) thể hiện các tính năng dữ liệu trong thế giới thực và được phân phối dưới dạng đầu vào cho mô hình ở môi trường giai đoạn.
+Kiểm tra bóng (Kỹ thuật an toàn để kiểm tra độ tỉnh táo khi triển khai các mô hình ML/AI lớn):
+* Triển khai mô hình song song với mô hình hiện tại (nếu đã có).
+* Đối với mỗi yêu cầu, hãy định tuyến yêu cầu đó đến cả hai mô hình để tạo dự báo nhưng chỉ phân phối dự báo hiện tại cho người dùng
+* Sử dụng dự đoán trên mô hình mới để đánh giá/phân tích
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/f7396a92-beb4-4771-9e57-de137b6ade2c)
+
+2.2.2.6  API Testing
+
+Đây là thử nghiệm cuối cùng, nơi chúng tôi xác minh cách người dùng thực sự sẽ xem câu trả lời từ mô hình. Do đó, nó nắm bắt tất cả các tình huống khác nhau trong đầu vào của người dùng có thể tạo ra sự cố khi phản hồi. Mỗi lỗi được mã hóa dưới dạng một Id duy nhất (dưới dạng status_code, mã lỗi). Và khía cạnh bảo mật của đầu vào và đầu ra được kiểm tra cho từng người tiêu dùng riêng biệt.
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/94a7b29d-07ca-4e62-a6dd-ff4d11924059)
+
+*2.2.3 Các loại testing production*
+
+
+
 
 
 
