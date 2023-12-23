@@ -313,14 +313,21 @@ Thứ hai, thách thức về sự trôi dạt dữ liệu gây rủi ro cho tí
 *2.1.6 Ứng dụng của Continual Learning*
 
 Thị giác máy tính: Học liên tục được sử dụng để đào tạo các thuật toán trong các nhiệm vụ nhận dạng và phân loại hình ảnh, chẳng hạn như nhận dạng khuôn mặt và phát hiện đối tượng.
+
 An ninh mạng: Các phương pháp học hỏi liên tục được sử dụng để giám sát liên tục các hệ thống bảo mật CNTT và phát hiện các mối đe dọa như nỗ lực lừa đảo, xâm nhập mạng và thư rác, đảm bảo trạng thái bảo mật chủ động.
 Chăm sóc sức khỏe: Học tập liên tục được áp dụng trong chăm sóc sức khỏe để cải thiện quy trình chẩn đoán, đặc biệt là trong các lĩnh vực như ung thư và X quang, nơi tính chất biến động của bệnh đòi hỏi phải học hỏi và thích nghi liên tục.
+
 Robotics: Các kỹ thuật học tập liên tục được sử dụng để nâng cao khả năng thích ứng và hiệu suất của robot. Bằng cách liên tục học hỏi từ những trải nghiệm mới và tối ưu hóa hành động, robot có thể hoạt động hiệu quả hơn trong những môi trường luôn thay đổi.
+
 Xử lý ngôn ngữ tự nhiên: Học tập liên tục được sử dụng trong các ứng dụng NLP như chatbot và trợ lý ảo, cho phép họ cải thiện khả năng hiểu ngôn ngữ và tạo phản hồi theo thời gian thông qua các tương tác liên tục.
 
+### 2.2 Test Production
 
+*2.2.1 Giới thiệu*
 
-
+Các bài kiểm tra học máy có thể được phân thành hai loại: bài kiểm tra phần mềm tiêu chuẩn và bài kiểm tra học máy (ML). Kiểm tra phần mềm đánh giá logic bằng văn bản, trong khi kiểm tra ML đánh giá logic đã học.
+Các bài kiểm tra ML có thể được chia thành hai thành phần riêng biệt: kiểm tra và đánh giá. Chúng tôi đã làm quen với đánh giá ML, bao gồm việc đào tạo một mô hình và đánh giá hiệu suất của nó trên một bộ xác thực chưa từng thấy trước đây. Đánh giá này được thực hiện bằng cách sử dụng các số liệu như độ chính xác và Vùng dưới đường cong của đặc tính hoạt động của máy thu (AUC ROC), cũng như đồ họa như đường cong thu hồi chính xác
+Ngược lại, thử nghiệm ML đòi hỏi phải đánh giá hành vi của mô hình. Các bài kiểm tra đào tạo trước, có thể được thực hiện mà không cần dạy các tham số, xác minh tính chính xác của logic bằng văn bản của chúng tôi. Chẳng hạn, xác suất phân loại có bị giới hạn trong phạm vi từ 0 đến 1 không? Đánh giá sau đào tạo đánh giá mức độ phù hợp của lý luận thu được với kết quả dự kiến. Trên tập dữ liệu Titanic, thật hợp lý khi dự đoán rằng phụ nữ sẽ có khả năng sống sót cao hơn so với nam giới.
 
 
 
