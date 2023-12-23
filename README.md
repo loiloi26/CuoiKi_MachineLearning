@@ -104,6 +104,29 @@ Một trong những ưu điểm chính của RMSProp so với Adagrad là nó c�
 *	Tính toán độ dốc: Tại mỗi lần lặp, tính toán độ dốc của hàm chi phí đối với các tham số.
 *	Cập nhật trung bình chạy:
 Cập nhật giá trị trung bình đang chạy bằng cách sử dụng phân rã theo cấp số nhân:
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/68b4d6b4-17de-47e9-8cbe-8aba02ae185e)
+
+Ở đây γ là hệ số phân rã (thường gần bằng 1) xác định trọng số của đường trung bình chạy trước đó so với độ dốc hiện tại.
+*Cập nhật thông số:
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/14ef2a3b-61dd-4f25-a939-8828c7d37cc7)
+
+*1.2.7 Adam(Adaptive Moment Estimation)*
+
+Adam (Adaptive Moment Estimation) là một kỹ thuật tối ưu hóa được sử dụng trong học máy và học sâu để tối ưu hóa việc đào tạo mạng lưới thần kinh.
+Adam tích hợp các khái niệm về động lượng và RMSProp. Nó duy trì mức trung bình động của khoảnh khắc thứ nhất và thứ hai của gradient, tương ứng là giá trị trung bình và phương sai của gradient. Đường trung bình động của thời điểm ban đầu, có thể so sánh với số hạng động lượng trong các phương pháp tối ưu hóa khác, hỗ trợ trình tối ưu hóa tiếp tục tiến triển theo cùng một hướng ngay cả khi độ dốc nhỏ hơn. Trung bình động của thời điểm thứ hai, giống hệt với thuật ngữ RMSProp, hỗ trợ trình tối ưu hóa điều chỉnh tốc độ học cho từng tham số dựa trên phương sai của độ dốc.
+Adam cũng bao gồm một giai đoạn hiệu chỉnh độ lệch để thay đổi các đường trung bình động vì chúng có độ lệch về 0 khi bắt đầu quá trình tối ưu hóa. Điều này giúp tăng hiệu suất của thuật toán tối ưu hóa trong giai đoạn đầu đào tạo.
+Adam là một kỹ thuật tối ưu hóa phổ biến vì khả năng hội tụ nhanh chóng và quản lý độ dốc nhiễu hoặc thưa thớt. Ngoài ra, nó không yêu cầu cài đặt thủ công các siêu tham số như suy giảm tốc độ học tập hoặc hệ số động lượng, giúp sử dụng dễ dàng hơn các kỹ thuật tối ưu hóa khác.
+Cách hoạt động:
+	*Khởi tạo:
+	Khởi tạo các tham số (ước tính thời điểm ban đầu), (ước tính thời điểm thô thứ hai ban đầu).
+	*Đặt t = 0 (bộ đếm lặp)
+	Chọn siêu tham số: α (tốc độ học), β_(1 )(tốc độ phân rã theo cấp số nhân cho ước tính khoảnh khắc đầu tiên), β_(2 ) tốc độ phân rã theo cấp số nhân cho ước tính mô men thô thứ hai), ϵ (hằng số nhỏ để ổn định số).
+	*Tính toán độ dốc:
+	Tại mỗi lần lặp t, hãy tính độ dốc của hàm chi phí đối với các tham số.
+	*Cập nhật ước tính thời điểm đầu tiên:
+	Cập nhật ước tính thời điểm đầu tiên (momentum term):
+ ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/d3de1e7f-9e77-4eb6-ab9b-0fa94cff6edf)
+
 
 
 
