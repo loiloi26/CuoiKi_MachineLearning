@@ -383,7 +383,9 @@ Mặc dù các hệ thống ML có bản chất xác suất nhưng chúng đư�
 Tiếng Anh
 
 Musstafa. (2021). Optimizers in Deep Learning. Retrieved December 22, 2023, from Medium: https://medium.com/mlearning-ai/optimizers-in-deep-learning-7bf81fed78a0
+
 Hanna Kleinings. (2022). What is Continuous Machine Learning?. Retrieved December 22, 2023, from Levity: https://levity.ai/blog/what-is-continuous-machine-learning
+
 Sanket Doshi. (2019). Various Optimization Algorithms For Training Neural Network. Retrieved December 22, 2023, from towardsdatascience: https://towardsdatascience.com/optimizers-for-training-neural-network-59450d71caf6
 
 
