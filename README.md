@@ -116,6 +116,7 @@ Adam (Adaptive Moment Estimation) là một kỹ thuật tối ưu hóa được
 Adam tích hợp các khái niệm về động lượng và RMSProp. Nó duy trì mức trung bình động của khoảnh khắc thứ nhất và thứ hai của gradient, tương ứng là giá trị trung bình và phương sai của gradient. Đường trung bình động của thời điểm ban đầu, có thể so sánh với số hạng động lượng trong các phương pháp tối ưu hóa khác, hỗ trợ trình tối ưu hóa tiếp tục tiến triển theo cùng một hướng ngay cả khi độ dốc nhỏ hơn. Trung bình động của thời điểm thứ hai, giống hệt với thuật ngữ RMSProp, hỗ trợ trình tối ưu hóa điều chỉnh tốc độ học cho từng tham số dựa trên phương sai của độ dốc.
 Adam cũng bao gồm một giai đoạn hiệu chỉnh độ lệch để thay đổi các đường trung bình động vì chúng có độ lệch về 0 khi bắt đầu quá trình tối ưu hóa. Điều này giúp tăng hiệu suất của thuật toán tối ưu hóa trong giai đoạn đầu đào tạo.
 Adam là một kỹ thuật tối ưu hóa phổ biến vì khả năng hội tụ nhanh chóng và quản lý độ dốc nhiễu hoặc thưa thớt. Ngoài ra, nó không yêu cầu cài đặt thủ công các siêu tham số như suy giảm tốc độ học tập hoặc hệ số động lượng, giúp sử dụng dễ dàng hơn các kỹ thuật tối ưu hóa khác.
+
 Cách hoạt động:
 	*Khởi tạo:
 	Khởi tạo các tham số (ước tính thời điểm ban đầu), (ước tính thời điểm thô thứ hai ban đầu).
