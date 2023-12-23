@@ -82,7 +82,28 @@ Thông thường γ  được đặt ở khoảng 0,9. Viết lại cập nhật
 ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/2e5d2258-fdf7-4dd8-8c1d-5389b78770d4)
 
 AdaDelta có dạng:
+
 ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/428c3f4d-d143-428c-82b4-7c90f04a88cc)
+
+*∆θ_t: Cập nhật tham số tại thời điểm t.
+*n: Tốc độ học, một đại lượng vô hướng dương xác định kích thước bước trong không gian tham số.
+*g_t: Gradient của hàm chi phí đối với các tham số tại thời điểm t
+*E[g^2 ]_t: Trung bình chạy của gradient bình phương tại thời điểm t
+*ϵ: Hằng số nhỏ được thêm vào để ổn định số học nhằm tránh chia cho 0 ở mẫu số.
+Ưu điểm chính của AdaDelta là chúng ta không cần đặt tốc độ học mặc định.
+Nhìn chung, Adadelta là một kỹ thuật tối ưu hóa mạnh mẽ có thể hỗ trợ đẩy nhanh quá trình đào tạo mạng lưới thần kinh sâu và tăng hiệu suất của chúng, đồng thời giải quyết một số nhược điểm của Adagrad.
+
+*1.2.6 RMS-Prop (Root Mean Square Propagation)*
+
+RMSProp (Root Mean Square Propagation) là một phương pháp tối ưu hóa được sử dụng trong học máy và học sâu để tối ưu hóa việc đào tạo mạng lưới thần kinh.
+Giống như Adagrad và Adadelta, RMSProp sửa đổi tốc độ học của từng tham số trong suốt quá trình đào tạo. Tuy nhiên, thay vì thu thập tất cả các gradient trước đó như Adagrad, RMSProp tính toán mức trung bình động của các gradient bình phương. Điều này giúp thuật toán sửa đổi tốc độ học chậm hơn và ngăn tốc độ học giảm xuống quá sớm.
+Kỹ thuật RMSProp cũng sử dụng hệ số phân rã để hạn chế ảnh hưởng của độ dốc trước đó đến tốc độ học. Hệ số phân rã này cho phép thuật toán tăng trọng số cho các gradient gần đây và ít trọng số hơn cho các gradient cũ hơn.
+Một trong những ưu điểm chính của RMSProp so với Adagrad là nó có thể xử lý các mục tiêu không cố định, trong đó chức năng cơ bản mà mạng nơ-ron đang cố gắng bắt chước thay đổi theo thời gian. Trong một số trường hợp nhất định, Adagrad có thể hội tụ quá nhanh, trong khi RMSProp có thể điều chỉnh tốc độ học theo hàm mục tiêu thay đổi.
+Đây là cách RMSProp hoạt động:
+*	Khởi tạo: Khởi tạo một biến trung bình đang chạy về 0, trong đó là độ dốc của hàm chi phí đối với các tham số.
+*	Tính toán độ dốc: Tại mỗi lần lặp, tính toán độ dốc của hàm chi phí đối với các tham số.
+*	Cập nhật trung bình chạy:
+Cập nhật giá trị trung bình đang chạy bằng cách sử dụng phân rã theo cấp số nhân:
 
 
 
