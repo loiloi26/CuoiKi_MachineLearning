@@ -189,45 +189,57 @@ Học liên tục thể hiện sự tiến bộ so với các phương pháp h�
 
 2.1.3.1  Incremental Learning
 
-*Kiến trúc động:
+* Kiến trúc động:
 Mô tả: Sử dụng các mô hình có kiến trúc có thể thích ứng và mở rộng để kết hợp kiến thức mới mà không quên nhiệm vụ cũ.
 Ứng dụng: Mạng có các nút động hoặc cấu trúc có thể thích ứng có thể phát triển tăng dần.
 
-*Progressive Neural Networks (PNN):
+* Progressive Neural Networks (PNN):
 Mô tả: Cho phép bổ sung thêm các đơn vị mới vào mạng để học các nhiệm vụ mới mà không ảnh hưởng đến kiến thức hiện có.
 Ứng dụng: Mở rộng dần dần mạng lưới thần kinh theo thời gian.
 
-*Tinh chỉnh:
+* Tinh chỉnh:
 Mô tả: Đào tạo lại mô hình về các nhiệm vụ mới với tốc độ học tập nhỏ hơn để thích ứng với những thay đổi gia tăng.
 Ứng dụng: Cập nhật các tham số của mô hình để phù hợp với các nhiệm vụ mới trong khi vẫn giữ lại kiến thức từ các nhiệm vụ trước đó.
 
 2.1.3.2 Transfer Learning
 
-*Khai thác tính năng:
+* Khai thác tính năng:
 Mô tả: Sử dụng các mô hình được đào tạo trước cho nhiệm vụ nguồn và chuyển giao kiến thức bằng cách trích xuất các tính năng và chỉ đào tạo các lớp cuối cùng về nhiệm vụ đích.
 Ứng dụng: Áp dụng kiến thức thu được từ lĩnh vực này sang lĩnh vực liên quan khác.
 
-*Thích ứng tên miền:
+* Thích ứng tên miền:
 Mô tả: Điều chỉnh mô hình được đào tạo trước từ một miền để hoạt động hiệu quả trong một miền khác nhưng có liên quan.
 Ứng dụng: Chuyển giao kiến thức giữa các lĩnh vực với những thay đổi nhỏ.
 
-*Multi-Task Learning (Học đa nhiệm vụ):
+* Multi-Task Learning (Học đa nhiệm vụ):
 Mô tả: Đồng thời đào tạo một mô hình về nhiều nhiệm vụ, tận dụng các biểu diễn được chia sẻ.
 Ứng dụng: Tìm hiểu một không gian đặc trưng chung có lợi cho nhiều nhiệm vụ.
 
 2.1.3.3 Lifelong Learning
 
-*Mạng tăng cường bộ nhớ:
+* Mạng tăng cường bộ nhớ:
 Mô tả: Tích hợp bộ nhớ ngoài để lưu trữ và truy xuất thông tin đã học theo thời gian.
 Ứng dụng: Lưu giữ kiến thức quan trọng từ các nhiệm vụ trước đó vào bộ nhớ ngoài.
 
-*Kiến trúc nhận biết nhiệm vụ:
+* Kiến trúc nhận biết nhiệm vụ:
 Mô tả: Thiết kế các mô hình nhận thức được các nhiệm vụ mà chúng hiện đang thực hiện, cho phép điều chỉnh theo từng nhiệm vụ cụ thể.
 Ứng dụng: Tự động điều chỉnh kiến trúc dựa trên nhiệm vụ hiện tại.
 
-*Meta-Learning (Siêu học tập):
+* Meta-Learning (Siêu học tập):
 Mô tả: Huấn luyện mô hình để thích ứng nhanh với các nhiệm vụ mới dựa trên kinh nghiệm thu được từ các nhiệm vụ trước đó.
 Ứng dụng: Học hỏi nhanh và thích ứng với các nhiệm vụ mới với lượng dữ liệu tối thiểu.	
+
+2.1.3.4 Experience Replay Methods
+
+* Bộ đệm phát lại:
+Mô tả: Lưu trữ và lấy mẫu ngẫu nhiên các trải nghiệm từ bộ đệm dữ liệu trong quá khứ trong quá trình đào tạo.
+Ứng dụng: Giảm thiểu tình trạng quên lãng nghiêm trọng bằng cách định kỳ xem lại và rèn luyện những kinh nghiệm trong quá khứ.
+
+* Hợp nhất trọng lượng đàn hồi (EWC):
+Mô tả: Chuẩn hóa các tham số của mô hình để bảo vệ các trọng số quan trọng đã học được trong các tác vụ trước đó.
+Ứng dụng: Ngăn chặn việc quên bằng cách gán hình phạt cao hơn cho các tham số quan trọng
+
+
 
 
 
