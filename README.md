@@ -148,7 +148,16 @@ Sửa sai lệch trong ước tính thời điểm thứ nhất và thứ hai, c
 Tăng bộ đếm lần lặp t và lặp lại các bước 2-6 cho đến khi hội tụ hoặc số lần lặp xác định.
 Nhìn chung, Adam là một phương pháp tối ưu hóa mạnh mẽ có thể giúp đẩy nhanh quá trình đào tạo mạng lưới thần kinh sâu và tăng hiệu suất của chúng.
 
+*1.3 Phân tích so sánh*
 
+|     Optimizer    | Ưu điểm                                                      | Nhược điểm                                                                                                                                                                                                                                                                               |
+|:----------------:|--------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Gradient Descent |      - Tính toán dễ dàng. - Dễ để thực hiện.  - Dễ hiểu.     |      - Có thể mắc kẹt ở mức tối thiểu cục bộ. - Trọng số được thay đổi sau khi tính toán độ dốc trên toàn bộ tập dữ liệu. Vì vậy, nếu    tập dữ liệu quá lớn thì có thể mất nhiều năm để hội tụ về mức tối thiểu. - Yêu cầu bộ nhớ lớn để tính toán độ dốc trên toàn bộ tập dữ liệu.     |
+|                  |                                                              |                                                                                                                                                                                                                                                                                          |
+|                  |                                                              |                                                                                                                                                                                                                                                                                          |
+|                  |                                                              |                                                                                                                                                                                                                                                                                          |
+|                  |                                                              |                                                                                                                                                                                                                                                                                          |
+|                  |                                                              |                                                                                                                                                                                                                                                                                          |
 
 
 
