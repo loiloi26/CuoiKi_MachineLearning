@@ -369,7 +369,22 @@ Kiểm tra bóng (Kỹ thuật an toàn để kiểm tra độ tỉnh táo khi t
 
 *2.2.3 Các loại testing production*
 
+Có bốn loại thử nghiệm chính được sử dụng ở các giai đoạn khác nhau trong chu kỳ phát triển:
+* Unit tests: kiểm tra trên các thành phần riêng biệt mà mỗi thành phần có một trách nhiệm duy nhất (ví dụ: chức năng lọc danh sách).
+* Integration tests: kiểm tra chức năng tích hợp của các thành phần riêng biệt (ví dụ: xử lý dữ liệu).
+* System tests: kiểm tra kiến trúc của hệ thống về các kết quả đầu ra dự kiến dựa trên các đầu vào (ví dụ: đào tạo, suy luận, v.v.).
+* Acceptance tests: kiểm tra để xác minh rằng các tiêu chí đã được thỏa mãn, thường được gọi là Kiểm tra chấp nhận của người dùng (UAT).
+* Regression tests: kiểm tra dựa trên các lỗi mà chúng tôi đã gặp phải trước đây để đảm bảo các sửa đổi mới không lặp lại chúng.
+Mặc dù các hệ thống ML có bản chất xác suất nhưng chúng được tạo thành từ nhiều thành phần có thể dự đoán được và có thể được xác minh theo cách tương tự như các hệ thống phần mềm thông thường. Sự tương phản giữa các hệ thống ML thử nghiệm xuất hiện khi chúng tôi chuyển từ thử nghiệm mã sang thử nghiệm dữ liệu và mô hình.
 
+
+# TÀI LIỆU THAM KHẢO
+
+Tiếng Anh
+
+Musstafa. (2021). Optimizers in Deep Learning. Retrieved December 22, 2023, from Medium: https://medium.com/mlearning-ai/optimizers-in-deep-learning-7bf81fed78a0
+Hanna Kleinings. (2022). What is Continuous Machine Learning?. Retrieved December 22, 2023, from Levity: https://levity.ai/blog/what-is-continuous-machine-learning
+Sanket Doshi. (2019). Various Optimization Algorithms For Training Neural Network. Retrieved December 22, 2023, from towardsdatascience: https://towardsdatascience.com/optimizers-for-training-neural-network-59450d71caf6
 
 
 
