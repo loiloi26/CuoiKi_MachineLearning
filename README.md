@@ -255,6 +255,17 @@ Mô tả: Vô hiệu hóa ngẫu nhiên các tế bào thần kinh trong quá tr
 
 Trong Continual Learning, việc kết hợp các phương pháp này một cách thận trọng thường là cần thiết để giải quyết những thách thức đặc biệt liên quan đến việc học theo thời gian mà không quên kiến thức quá khứ. Các nhà nghiên cứu tiếp tục khám phá các kỹ thuật mới để nâng cao khả năng của các mô hình học tập liên tục.
 
+*2.1.4 Continual Learning hoạt động như thế nào trong học máy*
+
+Continual Learning, còn được gọi là lifelong learning hoặc incremental learning, là một lĩnh vực học máy tập trung vào khả năng học hỏi và thích ứng của hệ thống theo thời gian khi có dữ liệu mới. Mục tiêu là cho phép một mô hình học hỏi từ một luồng dữ liệu mà không quên kiến thức mà nó đã thu được từ những trải nghiệm trước đó. Dưới đây là phần giải thích từng bước về cách hoạt động của học tập liên tục trong học máy, cùng với một số thuật toán và phương trình
+
+* Định nghĩa:
+	Xác định các nhiệm vụ mà mô hình cần học theo thời gian. Nhiệm vụ có thể là phân phối dữ liệu khác nhau, vấn đề phân loại hoặc bất kỳ mục tiêu học tập nào khác.
+* Khởi tạo:
+	Khởi tạo mô hình với một số tham số ban đầu. Điều này thường được thực hiện bằng cách sử dụng đào tạo tiêu chuẩn trên tập dữ liệu ban đầu cho nhiệm vụ đầu tiên.
+* Đào tạo nhiệm vụ:
+	Huấn luyện mô hình về nhiệm vụ hiện tại bằng cách sử dụng dữ liệu có sẵn. Các thuật toán học có giám sát tiêu chuẩn như giảm độ dốc có thể được sử dụng ở đây.
+
 
 
 
