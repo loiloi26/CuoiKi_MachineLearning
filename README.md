@@ -265,6 +265,49 @@ Xác định các nhiệm vụ mà mô hình cần học theo thời gian. Nhi�
 Khởi tạo mô hình với một số tham số ban đầu. Điều này thường được thực hiện bằng cách sử dụng đào tạo tiêu chuẩn trên tập dữ liệu ban đầu cho nhiệm vụ đầu tiên.
 * Đào tạo nhiệm vụ:
 Huấn luyện mô hình về nhiệm vụ hiện tại bằng cách sử dụng dữ liệu có sẵn. Các thuật toán học có giám sát tiêu chuẩn như giảm độ dốc có thể được sử dụng ở đây.
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/b01d4f3b-ef3d-459b-a6b4-cfa67746cda1)
+
+Trong đó θ đại diện cho các tham số của mô hình, N là số lượng mẫu huấn luyện, xi là ví dụ đầu vào, yi  là nhãn tương ứng và f  là hàm dự đoán của mô hình.
+
+*Cập nhật thông số:
+Cập nhật các tham số mô hình để giảm thiểu tổn thất theo nhiệm vụ cụ thể.
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/ed396249-a70a-4871-8311-654369b5fd3d)
+
+Trong đó η là tốc độ học và ∇_θ biểu thị độ dốc đối với các tham số mô hình.
+* Kỹ thuật chính quy hóa:
+Áp dụng các kỹ thuật chính quy hóa để ngăn chặn sự quên lãng thảm khốc. Các phương pháp chính quy hóa, chẳng hạn như hợp nhất trọng số đàn hồi (EWC) hoặc trí thông minh khớp thần kinh (SI), có thể được sử dụng để xử phạt các thay đổi đối với các tham số quan trọng đã học trong các nhiệm vụ trước đó.
+
+*Phát lại bộ nhớ
+Lưu trữ các ví dụ đại diện từ các tác vụ trước đó vào bộ nhớ đệm và phát lại chúng trong quá trình đào tạo về các tác vụ mới. Điều này giúp lưu giữ thông tin về các nhiệm vụ trong quá khứ và giảm thiểu tình trạng quên.
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/619bf6ea-6631-4335-8e14-fd7de7fa8d31)
+
+Trong đó M là số mẫu trong bộ nhớ đệm.
+*Chuyển đổi nhiệm vụ
+Lặp lại các bước 3-6 cho mỗi nhiệm vụ trong trình tự. Khi các nhiệm vụ mới được giới thiệu, mô hình sẽ điều chỉnh các tham số của nó để thực hiện tốt cả nhiệm vụ mới và nhiệm vụ đã học trước đó.
+*Đánh giá
+Đánh giá định kỳ hiệu suất của mô hình trên tất cả các nhiệm vụ để đảm bảo rằng nó duy trì mức độ chính xác tốt đối với các nhiệm vụ đã học trước đó trong khi vẫn học các nhiệm vụ mới.
+
+*2.1.5 Ưu điểm và hạn chế của quá trình Continual Learning*
+
+Ưu điểm của Continual Learning
+Học liên tục chứng tỏ có giá trị trong nhiều dự án dữ liệu, bao gồm phân tích mô tả, chẩn đoán, dự đoán và phân tích theo quy định. Tầm quan trọng của nó được đặc biệt nhấn mạnh trong các tình huống có dữ liệu thay đổi nhanh chóng. So với các phương pháp học máy thông thường, các ưu điểm bao gồm:
+* Tăng cường khái quát hóa:	
+Học tập liên tục giúp mô hình thể hiện độ tin cậy và độ chính xác cao hơn khi đối mặt với dữ liệu mới.
+Ưu điểm: Cải thiện khả năng khái quát hóa trên các tình huống đa dạng và đang phát triển.
+* Lưu giữ thông tin:
+Thông qua việc áp dụng các chiến lược học tập liên tục, mô hình sẽ tính đến kiến thức trước đó thu được trong các lần lặp trước.
+Ưu điểm: Mô hình có thể tích lũy thông tin theo thời gian, giảm thiểu nguy cơ quên các mẫu đã học trước đó.
+* Khả năng thích ứng:
+Các mô hình sử dụng học tập liên tục thể hiện khả năng thích ứng với kiến thức mới, chẳng hạn như sự trôi dạt khái niệm và các xu hướng mới nổi.
+Ưu điểm: Khả năng dự đoán cao hơn trong thời gian dài, đảm bảo tính phù hợp khi đối mặt với môi trường dữ liệu động.
+* Hạn chế của Continual Learning
+Mặc dù việc học liên tục mang lại khả năng thích ứng hiệu quả với dữ liệu mới, nhưng các thách thức về mô hình và chi phí liên quan phải được xem xét cẩn thận. Độ phức tạp tính toán tăng lên có thể dẫn đến chi phí kinh tế cao hơn và các vấn đề như quản lý mô hình và trôi dạt dữ liệu đặt ra những thách thức bổ sung trong việc thực hiện các phương pháp học tập liên tục.
+* Cân nhắc về chi phí và nhược điểm của mô hình hóa:
+Học tập liên tục, mặc dù có hiệu quả trong việc thích ứng với dữ liệu mới, nhưng lại đưa ra những cân nhắc nhất định về chi phí và những hạn chế trong mô hình hóa. Từ góc độ chi phí, các phương pháp học liên tục có xu hướng phức tạp hơn về mặt tính toán so với các phương pháp truyền thống. Sự phức tạp ngày càng tăng này phát sinh từ việc mô hình liên tục thích ứng với dữ liệu mới, đòi hỏi đầu tư bổ sung vào dữ liệu, nguồn nhân lực và cơ sở hạ tầng máy tính. Các chi phí kinh tế liên quan đến những nhu cầu này có thể là một sự cân nhắc đáng kể đối với các tổ chức.
+* Về mặt mô hình hóa, việc học tập liên tục có những hạn chế:
+Đầu tiên, vấn đề quản lý mô hình nảy sinh. Với mỗi lần cập nhật dựa trên dữ liệu mới, một mô hình mới sẽ được hình thành, có khả năng dẫn đến một số lượng lớn các mô hình. Sự gia tăng nhanh chóng này làm phức tạp thêm việc xác định các mô hình hoạt động tốt nhất và đặt ra những thách thức về mặt quản trị và đánh giá mô hình.
+Thứ hai, thách thức về sự trôi dạt dữ liệu gây rủi ro cho tính hiệu quả của các phương pháp học tập liên tục. Học tập liên tục phụ thuộc vào việc xử lý khối lượng lớn dữ liệu mới và những thay đổi đột ngột trong phân phối tính năng, được gọi là trôi dạt dữ liệu, có thể làm suy yếu khả năng dự đoán của mô hình. Việc giải quyết thành công tình trạng trôi dạt dữ liệu trở thành một thách thức quan trọng, đòi hỏi phải thực hiện các chiến lược để duy trì độ chính xác của mô hình khi đối mặt với môi trường dữ liệu động.
+
 
 
 
