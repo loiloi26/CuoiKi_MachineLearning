@@ -131,6 +131,25 @@ Tại mỗi lần lặp t, hãy tính độ dốc của hàm chi phí đối v�
 Cập nhật ước tính thời điểm đầu tiên (momentum term):
  ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/d3de1e7f-9e77-4eb6-ab9b-0fa94cff6edf)
 
+*Cập nhật ước tính khoảnh khắc thô thứ hai:
+Cập nhật ước lượng mômen thô thứ hai:
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/acfc18ef-99e2-43f6-a3f5-d51749493a75)
+
+*Hiệu chỉnh sai lệch:
+Sửa sai lệch trong ước tính thời điểm thứ nhất và thứ hai, có xu hướng sai lệch về 0 trong các lần lặp đầu tiên:
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/c4b374a3-690d-482e-a2e8-3ccf1e2c79e5)
+
+*Cập nhật tham số:
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/64f9fa1a-050c-4011-8411-9f1e29b73979)
+
+Ở đây θ thể hiện các thông số đang được tối ưu hóa.
+*Lặp lại:
+Tăng bộ đếm lần lặp t và lặp lại các bước 2-6 cho đến khi hội tụ hoặc số lần lặp xác định.
+Nhìn chung, Adam là một phương pháp tối ưu hóa mạnh mẽ có thể giúp đẩy nhanh quá trình đào tạo mạng lưới thần kinh sâu và tăng hiệu suất của chúng.
+
+
+
+
 
 
 
