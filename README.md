@@ -62,5 +62,27 @@ G[i] += (∇θJ(θ[i]))²
 η :tốc độ học
 ∇θJ(θ[i]) : gradient của hàm mất mát đối với tham số θ[i]. 
 
+*1.2.5 AdaDelta*
+
+Adadelta là một kỹ thuật tối ưu hóa được sử dụng trong học máy và học sâu để tối ưu hóa việc đào tạo mạng lưới thần kinh. Đây là một biến thể của phương pháp Adagrad khắc phục được một số nhược điểm của nó.
+Phương pháp Adadelta sửa đổi tốc độ học của từng tham số theo cách tương tự như Adagrad, nhưng thay vì giữ lại tất cả các gradient trước đó, nó chỉ giữ lại mức trung bình động của các gradient bình phương. Điều này giúp giảm nhu cầu bộ nhớ của phương pháp.
+Ngoài ra, Adadelta sử dụng một phương pháp gọi là "cập nhật delta" để thay đổi tốc độ học. Thay vì sử dụng tốc độ học tập đã đặt, Adadelta sử dụng tỷ lệ bình phương trung bình gốc (RMS) của các gradient trước đó và RMS của các bản cập nhật trước đây để mở rộng tốc độ học tập. Điều này giúp ngăn chặn hơn nữa tốc độ học tập giảm quá sớm đối với các đặc điểm thường xuyên xảy ra.
+Giống như Adagrad, Adadelta đặc biệt hiệu quả trong việc xử lý dữ liệu thưa thớt, nhưng nó cũng có thể hoạt động tốt hơn trong trường hợp Adagrad có thể hội tụ quá nhanh. 
+AdaDelta là một kỹ thuật tối ưu hóa ngẫu nhiên cho phép áp dụng phương pháp tốc độ học theo chiều cho SGD. Nó là một phần mở rộng của Adagrad nhằm tìm cách giảm tốc độ học tập giảm dần và đơn điệu. Thay vì tích lũy tất cả các gradient bình phương trong quá khứ, Adadelta giới hạn cửa sổ của các gradient trong quá khứ được tích lũy ở một kích thước cố định w.
+Thay vì lưu trữ không hiệu quả w gradient bình phương trước đó, tổng gradient được xác định đệ quy là trung bình phân rã của tất cả gradient bình phương trước đó. Khi đó, mức trung bình đang chạy ở bước thời gian chỉ phụ thuộc vào độ dốc trung bình trước đó và hiện tại:
+
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/ae20e9c6-7b0d-459b-9113-f5b8977493fc)
+
+*E〖[g^2]〗_t: Trung bình chạy của gradient bình phương tại thời điểm t.
+*γ: Hệ số suy giảm hoặc hệ số làm mịn, giá trị từ 0 đến 1 xác định trọng số cho giá trị trung bình chạy trước đó.
+*γE〖[g^2]〗_(t-1 ): Trung bình chạy của các gradient bình phương ở bước thời gian trước đó (t−1).
+*g_t: Độ dốc của hàm chi phí đối với các tham số tại thời điểm t.
+
+Thông thường γ  được đặt ở khoảng 0,9. Viết lại cập nhật SGD theo vectơ cập nhật tham số:
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/2e5d2258-fdf7-4dd8-8c1d-5389b78770d4)
+
+AdaDelta có dạng:
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/428c3f4d-d143-428c-82b4-7c90f04a88cc)
+
 
 
