@@ -73,10 +73,10 @@ Thay vì lưu trữ không hiệu quả w gradient bình phương trước đó,
 
 ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/ae20e9c6-7b0d-459b-9113-f5b8977493fc)
 
-*E〖[g^2]〗_t: Trung bình chạy của gradient bình phương tại thời điểm t.
-*γ: Hệ số suy giảm hoặc hệ số làm mịn, giá trị từ 0 đến 1 xác định trọng số cho giá trị trung bình chạy trước đó.
-*γE〖[g^2]〗_(t-1 ): Trung bình chạy của các gradient bình phương ở bước thời gian trước đó (t−1).
-*g_t: Độ dốc của hàm chi phí đối với các tham số tại thời điểm t.
+* E〖[g^2]〗_t: Trung bình chạy của gradient bình phương tại thời điểm t.
+* γ: Hệ số suy giảm hoặc hệ số làm mịn, giá trị từ 0 đến 1 xác định trọng số cho giá trị trung bình chạy trước đó.
+* γE〖[g^2]〗_(t-1 ): Trung bình chạy của các gradient bình phương ở bước thời gian trước đó (t−1).
+* g_t: Độ dốc của hàm chi phí đối với các tham số tại thời điểm t.
 
 Thông thường γ  được đặt ở khoảng 0,9. Viết lại cập nhật SGD theo vectơ cập nhật tham số:
 ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/2e5d2258-fdf7-4dd8-8c1d-5389b78770d4)
@@ -85,11 +85,11 @@ AdaDelta có dạng:
 
 ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/428c3f4d-d143-428c-82b4-7c90f04a88cc)
 
-*∆θ_t: Cập nhật tham số tại thời điểm t.
-*n: Tốc độ học, một đại lượng vô hướng dương xác định kích thước bước trong không gian tham số.
-*g_t: Gradient của hàm chi phí đối với các tham số tại thời điểm t
-*E[g^2 ]_t: Trung bình chạy của gradient bình phương tại thời điểm t
-*ϵ: Hằng số nhỏ được thêm vào để ổn định số học nhằm tránh chia cho 0 ở mẫu số.
+* ∆θ_t: Cập nhật tham số tại thời điểm t.
+* n: Tốc độ học, một đại lượng vô hướng dương xác định kích thước bước trong không gian tham số.
+* g_t: Gradient của hàm chi phí đối với các tham số tại thời điểm t
+* E[g^2 ]_t: Trung bình chạy của gradient bình phương tại thời điểm t
+* ϵ: Hằng số nhỏ được thêm vào để ổn định số học nhằm tránh chia cho 0 ở mẫu số.
 Ưu điểm chính của AdaDelta là chúng ta không cần đặt tốc độ học mặc định.
 Nhìn chung, Adadelta là một kỹ thuật tối ưu hóa mạnh mẽ có thể hỗ trợ đẩy nhanh quá trình đào tạo mạng lưới thần kinh sâu và tăng hiệu suất của chúng, đồng thời giải quyết một số nhược điểm của Adagrad.
 
@@ -121,30 +121,30 @@ Adam cũng bao gồm một giai đoạn hiệu chỉnh độ lệch để thay �
 Adam là một kỹ thuật tối ưu hóa phổ biến vì khả năng hội tụ nhanh chóng và quản lý độ dốc nhiễu hoặc thưa thớt. Ngoài ra, nó không yêu cầu cài đặt thủ công các siêu tham số như suy giảm tốc độ học tập hoặc hệ số động lượng, giúp sử dụng dễ dàng hơn các kỹ thuật tối ưu hóa khác.
 
 Cách hoạt động:
-*Khởi tạo:
+* Khởi tạo:
 Khởi tạo các tham số (ước tính thời điểm ban đầu), (ước tính thời điểm thô thứ hai ban đầu).
-*Đặt t = 0 (bộ đếm lặp)
+* Đặt t = 0 (bộ đếm lặp)
 Chọn siêu tham số: α (tốc độ học), β_(1 )(tốc độ phân rã theo cấp số nhân cho ước tính khoảnh khắc đầu tiên), β_(2 ) tốc độ phân rã theo cấp số nhân cho ước tính mô men thô thứ hai), ϵ (hằng số nhỏ để ổn định số).
 *Tính toán độ dốc:
 Tại mỗi lần lặp t, hãy tính độ dốc của hàm chi phí đối với các tham số.
-*Cập nhật ước tính thời điểm đầu tiên:
+* Cập nhật ước tính thời điểm đầu tiên:
 Cập nhật ước tính thời điểm đầu tiên (momentum term):
  ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/d3de1e7f-9e77-4eb6-ab9b-0fa94cff6edf)
 
-*Cập nhật ước tính khoảnh khắc thô thứ hai:
+* Cập nhật ước tính khoảnh khắc thô thứ hai:
 Cập nhật ước lượng mômen thô thứ hai:
 ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/acfc18ef-99e2-43f6-a3f5-d51749493a75)
 
-*Hiệu chỉnh sai lệch:
+* Hiệu chỉnh sai lệch:
 Sửa sai lệch trong ước tính thời điểm thứ nhất và thứ hai, có xu hướng sai lệch về 0 trong các lần lặp đầu tiên:
 ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/c4b374a3-690d-482e-a2e8-3ccf1e2c79e5)
 
-*Cập nhật tham số:
+* Cập nhật tham số:
 
 ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/64f9fa1a-050c-4011-8411-9f1e29b73979)
 
 Ở đây θ thể hiện các thông số đang được tối ưu hóa.
-*Lặp lại:
+* Lặp lại:
 Tăng bộ đếm lần lặp t và lặp lại các bước 2-6 cho đến khi hội tụ hoặc số lần lặp xác định.
 Nhìn chung, Adam là một phương pháp tối ưu hóa mạnh mẽ có thể giúp đẩy nhanh quá trình đào tạo mạng lưới thần kinh sâu và tăng hiệu suất của chúng.
 
@@ -238,6 +238,22 @@ Mô tả: Lưu trữ và lấy mẫu ngẫu nhiên các trải nghiệm từ b�
 * Hợp nhất trọng lượng đàn hồi (EWC):
 Mô tả: Chuẩn hóa các tham số của mô hình để bảo vệ các trọng số quan trọng đã học được trong các tác vụ trước đó.
 Ứng dụng: Ngăn chặn việc quên bằng cách gán hình phạt cao hơn cho các tham số quan trọng
+
+2.1.3.5 Regularization Techniques: 
+
+* EWC (Elastic Weight Consolidation):
+Mô tả: Đưa ra số hạng phạt trong hàm mất mát để bảo toàn các trọng số quan trọng.
+Ứng dụng: Bảo vệ các thông số quan trọng trong quá trình đào tạo các nhiệm vụ mới.
+
+* Chính quy hóa L2:
+Mô tả: Thêm một số hạng phạt vào hàm mất mát dựa trên độ lớn bình phương của các trọng số.
+Ứng dụng: Kiểm soát quá mức và duy trì mô hình ổn định hơn.
+
+* Dropout:
+Mô tả: Vô hiệu hóa ngẫu nhiên các tế bào thần kinh trong quá trình huấn luyện để ngăn chặn sự đồng thích ứng của các đơn vị ẩn.
+Ứng dụng: Cải thiện khả năng khái quát hóa bằng cách giảm sự phụ thuộc vào các nơ-ron cụ thể.
+
+Trong Continual Learning, việc kết hợp các phương pháp này một cách thận trọng thường là cần thiết để giải quyết những thách thức đặc biệt liên quan đến việc học theo thời gian mà không quên kiến thức quá khứ. Các nhà nghiên cứu tiếp tục khám phá các kỹ thuật mới để nâng cao khả năng của các mô hình học tập liên tục.
 
 
 
