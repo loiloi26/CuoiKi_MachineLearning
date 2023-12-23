@@ -181,7 +181,37 @@ CML, viết tắt của Học máy liên tục, là thư viện Tích hợp liê
 Nếu bạn đã quen với hệ thống đề xuất của Netflix, hệ thống này có tính năng “Tiếp theo” phát các chương trình tương tự như những chương trình bạn vừa xem thì bạn đã thấy mô hình CML hoạt động. Để theo kịp nguồn cung cấp chương trình mới không ngừng nghỉ, cũng như sự thay đổi sở thích và thói quen của người đăng ký Netflix, dữ liệu đến phải được nhập thường xuyên. Và mô hình phải cập nhật liên tục để có khả năng đề xuất các chương trình hoặc bộ phim phù hợp.
 
 *2.1.2 Quá trình Continual Learning*
+
 Học liên tục thể hiện sự tiến bộ so với các phương pháp học máy thông thường, kết hợp các nguyên tắc lập mô hình quen thuộc như tiền xử lý, lựa chọn mô hình, điều chỉnh siêu tham số, đào tạo, triển khai và giám sát. Để nâng cao khả năng thích ứng với việc phát triển dữ liệu, hai bước bổ sung trở nên cần thiết trong quá trình học tập liên tục: diễn tập dữ liệu và xây dựng chiến lược học tập liên tục. Các bước này được thiết kế để tối ưu hóa việc đồng hóa các luồng dữ liệu mới của mô hình, phù hợp với các yêu cầu và bối cảnh cụ thể của nhiệm vụ dữ liệu.
+![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/b6a7002c-c4f5-4d34-9a0b-0c5f271426ec)
+
+*2.1.3 Các loại Continual Learning*
+
+2.1.3.1  Incremental Learning
+
+*Kiến trúc động:
+Mô tả: Sử dụng các mô hình có kiến trúc có thể thích ứng và mở rộng để kết hợp kiến thức mới mà không quên nhiệm vụ cũ.
+Ứng dụng: Mạng có các nút động hoặc cấu trúc có thể thích ứng có thể phát triển tăng dần.
+*Progressive Neural Networks (PNN):
+Mô tả: Cho phép bổ sung thêm các đơn vị mới vào mạng để học các nhiệm vụ mới mà không ảnh hưởng đến kiến thức hiện có.
+Ứng dụng: Mở rộng dần dần mạng lưới thần kinh theo thời gian.
+*Tinh chỉnh:
+Mô tả: Đào tạo lại mô hình về các nhiệm vụ mới với tốc độ học tập nhỏ hơn để thích ứng với những thay đổi gia tăng.
+Ứng dụng: Cập nhật các tham số của mô hình để phù hợp với các nhiệm vụ mới trong khi vẫn giữ lại kiến thức từ các nhiệm vụ trước đó.
+
+2.1.3.2 Transfer Learning
+
+*Khai thác tính năng:
+Mô tả: Sử dụng các mô hình được đào tạo trước cho nhiệm vụ nguồn và chuyển giao kiến thức bằng cách trích xuất các tính năng và chỉ đào tạo các lớp cuối cùng về nhiệm vụ đích.
+Ứng dụng: Áp dụng kiến thức thu được từ lĩnh vực này sang lĩnh vực liên quan khác.
+*Thích ứng tên miền:
+Mô tả: Điều chỉnh mô hình được đào tạo trước từ một miền để hoạt động hiệu quả trong một miền khác nhưng có liên quan.
+Ứng dụng: Chuyển giao kiến thức giữa các lĩnh vực với những thay đổi nhỏ.
+*Multi-Task Learning (Học đa nhiệm vụ):
+Mô tả: Đồng thời đào tạo một mô hình về nhiều nhiệm vụ, tận dụng các biểu diễn được chia sẻ.
+Ứng dụng: Tìm hiểu một không gian đặc trưng chung có lợi cho nhiều nhiệm vụ.
+
+
 
 
 
