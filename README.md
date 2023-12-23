@@ -140,6 +140,7 @@ Sửa sai lệch trong ước tính thời điểm thứ nhất và thứ hai, c
 ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/c4b374a3-690d-482e-a2e8-3ccf1e2c79e5)
 
 *Cập nhật tham số:
+
 ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/64f9fa1a-050c-4011-8411-9f1e29b73979)
 
 Ở đây θ thể hiện các thông số đang được tối ưu hóa.
