@@ -33,11 +33,11 @@ Cách mà momentum hoạt động:
 
 ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/323d5c17-62c2-4249-9cb3-34d62af24e53)
 
-*J(θ) là hàm chi phí..
-*∇_θ  J(θ) là độ dốc của hàm chi phí đối với các tham số θ 
-*β là số hạng động lượng (momentum term)
-*v là vectơ vận tốc hoặc động lượng
-*α là tốc độ học
+* J(θ) là hàm chi phí..
+* ∇_θ  J(θ) là độ dốc của hàm chi phí đối với các tham số θ 
+* β là số hạng động lượng (momentum term)
+* v là vectơ vận tốc hoặc động lượng
+* α là tốc độ học
 
 Thông thường, hệ số động lượng được đặt ở mức 0,9. Trình tối ưu hóa tính toán độ dốc của hàm chi phí tại mỗi lần lặp và cập nhật số hạng động lượng dưới dạng trung bình động có trọng số theo cấp số nhân của các độ dốc trước đó. Các tham số sau đó được cập nhật bằng cách loại bỏ số hạng động lượng nhân với tốc độ học.
 Nhìn chung, động lượng là một chiến lược tối ưu hóa mạnh mẽ có thể hỗ trợ đẩy nhanh quá trình đào tạo mạng lưới nơ-ron sâu và tăng hiệu suất của chúng.
