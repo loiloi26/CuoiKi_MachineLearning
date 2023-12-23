@@ -152,9 +152,12 @@ Nhìn chung, Adam là một phương pháp tối ưu hóa mạnh mẽ có thể 
 
 ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/28d1b248-f4d3-4bea-b2ba-33fec56f0c63)
 
+
 # CHƯƠNG 2.  TÌM HIỂU VỀ CONTINUAL LEARNING VÀ TEST PRODUCTION KHI XÂY DỰNG MỘT GIẢI PHÁP HỌC MÁY ĐỂ GIẢI QUYẾT MỘT BÀI TOÁN NÀO ĐÓ 
+
 ### 2.1 Continual Learning
 *2.1.1 Khái niệm*
+
 Học máy là một loại Trí tuệ nhân tạo (AI) cho phép máy tính có khả năng học hỏi mà không cần được con người đào tạo rõ ràng để làm việc đó. Ở cấp độ cơ bản, Machine Learning sử dụng các thuật toán để cung cấp cho máy tính khả năng nghiên cứu dữ liệu, phát hiện các mẫu và tạo kết quả dự đoán. Tuy nhiên, khó khăn là mô hình Machine Learning tiêu chuẩn dự đoán rằng dữ liệu sẽ có thể so sánh được với dữ liệu mà nó đã được đào tạo, điều này không nhất thiết phải như vậy.
 Continuous Machine Learning (CML) giải quyết vấn đề này bằng cách giám sát và đào tạo lại các mô hình với dữ liệu hiện tại. Mục đích của CML là mô phỏng khả năng thu thập và tinh chỉnh kiến thức liên tục của con người. Trong bài viết này, chúng ta sẽ đi sâu vào chi tiết về chính xác CML là gì, những trở ngại liên quan đến nó và tại sao nó lại quan trọng đối với sự phát triển của AI.
 Trước khi đi vào chi tiết về Continuous Machine Learning, điều quan trọng trước tiên là phải xác định các công nghệ DevOps mà nó dựa vào – CI, CT và CD.
@@ -164,9 +167,21 @@ Trước khi đi vào chi tiết về Continuous Machine Learning, điều quan 
 * **Continuous Integration (CI)**
 Hoạt động tự động hóa việc tích hợp các thay đổi mã từ một số người đóng góp vào một dự án phần mềm duy nhất được gọi là Tích hợp liên tục (CI). Đó là phương pháp thực hành tốt nhất của DevOps cho phép các nhà phát triển thường xuyên hợp nhất các thay đổi mã vào một trung tâm duy nhất nơi các bản dựng và thử nghiệm sau đó được thực hiện. Trước khi kết hợp mã mới, các công cụ tự động sẽ được kiểm tra để xác nhận tính chính xác của chúng.
 Cách tiếp cận CI phụ thuộc đáng kể vào hệ thống kiểm soát phiên bản mã nguồn. Ngoài ra, các kiểm tra sâu hơn, chẳng hạn như kiểm tra chất lượng mã tự động, các công cụ đánh giá kiểu cú pháp và các công cụ khác, được đưa vào hệ thống kiểm soát phiên bản.
+
 * **Continuous Training (CT)**
 Như đã nêu trước đây, các mô hình Machine Learning (ML) giả định rằng dữ liệu sẽ luôn có thể so sánh được với dữ liệu mà nó đã được đào tạo. Tuy nhiên, không phải lúc nào cũng như vậy. Cụ thể, phần lớn các mô hình hoạt động trong các tình huống mà dữ liệu thay đổi thường xuyên và có khả năng xảy ra hiện tượng "trôi dạt khái niệm", điều này có thể có ảnh hưởng bất lợi đến độ chính xác và độ tin cậy của các dự đoán của mô hình. Để tránh tình trạng "trôi dạt khái niệm" trong quá trình phát triển , các mô hình cần được kiểm tra và đào tạo lại khi dữ liệu quá sai.
 Đây là nơi xuất hiện khái niệm Đào tạo liên tục. CT là một thành phần của mô hình thực hành MLOps. Nó tìm cách đào tạo lại mô hình một cách tự động và liên tục để thích ứng với những thay đổi trong dữ liệu. Cách làm này tránh cho mô hình trở nên không đáng tin cậy và không chính xác.
+
+* **Continuous Delivery (CD)**
+Mục đích của Phân phối liên tục là tạo ra một cơ chế đáng tin cậy và có thể lặp lại để triển khai phần mềm vào sản xuất. Phân phối liên tục cho Machine Learning (CD4ML) mở rộng phương pháp này bằng cách cho phép một nhóm đa chức năng xây dựng các ứng dụng Machine Learning dựa trên mã, dữ liệu và mô hình cải thiện theo từng bước nhỏ, an toàn có thể được sao chép và xuất bản một cách đáng tin cậy bất cứ lúc nào.
+
+* **Continuous Machine Learning (CML)**
+Bây giờ chúng ta đã hiểu rõ về các nguyên tắc trên, chúng ta có thể xem xét kỹ hơn một chút về Học máy liên tục.
+CML, viết tắt của Học máy liên tục, là thư viện Tích hợp liên tục (CI) và Phân phối liên tục (CD) mã nguồn mở dành cho Học máy. Nói chung, nó có thể được sử dụng để tự động hóa các yếu tố trong quy trình Machine Learning của bạn, chẳng hạn như đào tạo và đánh giá mô hình, so sánh các thử nghiệm ML trong lịch sử dự án của bạn và theo dõi các thay đổi trong bộ dữ liệu. Nó hoạt động trên nền tảng của hệ sinh thái MLOps, cho phép bạn sử dụng các công cụ DevOps ưa thích của mình trong các dự án Machine Learning.
+Nếu bạn đã quen với hệ thống đề xuất của Netflix, hệ thống này có tính năng “Tiếp theo” phát các chương trình tương tự như những chương trình bạn vừa xem thì bạn đã thấy mô hình CML hoạt động. Để theo kịp nguồn cung cấp chương trình mới không ngừng nghỉ, cũng như sự thay đổi sở thích và thói quen của người đăng ký Netflix, dữ liệu đến phải được nhập thường xuyên. Và mô hình phải cập nhật liên tục để có khả năng đề xuất các chương trình hoặc bộ phim phù hợp.
+
+*2.1.2 Quá trình Continual Learning*
+Học liên tục thể hiện sự tiến bộ so với các phương pháp học máy thông thường, kết hợp các nguyên tắc lập mô hình quen thuộc như tiền xử lý, lựa chọn mô hình, điều chỉnh siêu tham số, đào tạo, triển khai và giám sát. Để nâng cao khả năng thích ứng với việc phát triển dữ liệu, hai bước bổ sung trở nên cần thiết trong quá trình học tập liên tục: diễn tập dữ liệu và xây dựng chiến lược học tập liên tục. Các bước này được thiết kế để tối ưu hóa việc đồng hóa các luồng dữ liệu mới của mô hình, phù hợp với các yêu cầu và bối cảnh cụ thể của nhiệm vụ dữ liệu.
 
 
 
