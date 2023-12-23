@@ -305,8 +305,19 @@ Mặc dù việc học liên tục mang lại khả năng thích ứng hiệu qu
 * Cân nhắc về chi phí và nhược điểm của mô hình hóa:
 Học tập liên tục, mặc dù có hiệu quả trong việc thích ứng với dữ liệu mới, nhưng lại đưa ra những cân nhắc nhất định về chi phí và những hạn chế trong mô hình hóa. Từ góc độ chi phí, các phương pháp học liên tục có xu hướng phức tạp hơn về mặt tính toán so với các phương pháp truyền thống. Sự phức tạp ngày càng tăng này phát sinh từ việc mô hình liên tục thích ứng với dữ liệu mới, đòi hỏi đầu tư bổ sung vào dữ liệu, nguồn nhân lực và cơ sở hạ tầng máy tính. Các chi phí kinh tế liên quan đến những nhu cầu này có thể là một sự cân nhắc đáng kể đối với các tổ chức.
 * Về mặt mô hình hóa, việc học tập liên tục có những hạn chế:
+
 Đầu tiên, vấn đề quản lý mô hình nảy sinh. Với mỗi lần cập nhật dựa trên dữ liệu mới, một mô hình mới sẽ được hình thành, có khả năng dẫn đến một số lượng lớn các mô hình. Sự gia tăng nhanh chóng này làm phức tạp thêm việc xác định các mô hình hoạt động tốt nhất và đặt ra những thách thức về mặt quản trị và đánh giá mô hình.
+
 Thứ hai, thách thức về sự trôi dạt dữ liệu gây rủi ro cho tính hiệu quả của các phương pháp học tập liên tục. Học tập liên tục phụ thuộc vào việc xử lý khối lượng lớn dữ liệu mới và những thay đổi đột ngột trong phân phối tính năng, được gọi là trôi dạt dữ liệu, có thể làm suy yếu khả năng dự đoán của mô hình. Việc giải quyết thành công tình trạng trôi dạt dữ liệu trở thành một thách thức quan trọng, đòi hỏi phải thực hiện các chiến lược để duy trì độ chính xác của mô hình khi đối mặt với môi trường dữ liệu động.
+
+*2.1.6 Ứng dụng của Continual Learning*
+
+Thị giác máy tính: Học liên tục được sử dụng để đào tạo các thuật toán trong các nhiệm vụ nhận dạng và phân loại hình ảnh, chẳng hạn như nhận dạng khuôn mặt và phát hiện đối tượng.
+An ninh mạng: Các phương pháp học hỏi liên tục được sử dụng để giám sát liên tục các hệ thống bảo mật CNTT và phát hiện các mối đe dọa như nỗ lực lừa đảo, xâm nhập mạng và thư rác, đảm bảo trạng thái bảo mật chủ động.
+Chăm sóc sức khỏe: Học tập liên tục được áp dụng trong chăm sóc sức khỏe để cải thiện quy trình chẩn đoán, đặc biệt là trong các lĩnh vực như ung thư và X quang, nơi tính chất biến động của bệnh đòi hỏi phải học hỏi và thích nghi liên tục.
+Robotics: Các kỹ thuật học tập liên tục được sử dụng để nâng cao khả năng thích ứng và hiệu suất của robot. Bằng cách liên tục học hỏi từ những trải nghiệm mới và tối ưu hóa hành động, robot có thể hoạt động hiệu quả hơn trong những môi trường luôn thay đổi.
+Xử lý ngôn ngữ tự nhiên: Học tập liên tục được sử dụng trong các ứng dụng NLP như chatbot và trợ lý ảo, cho phép họ cải thiện khả năng hiểu ngôn ngữ và tạo phản hồi theo thời gian thông qua các tương tác liên tục.
+
 
 
 
