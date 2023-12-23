@@ -121,17 +121,14 @@ Adam cũng bao gồm một giai đoạn hiệu chỉnh độ lệch để thay �
 Adam là một kỹ thuật tối ưu hóa phổ biến vì khả năng hội tụ nhanh chóng và quản lý độ dốc nhiễu hoặc thưa thớt. Ngoài ra, nó không yêu cầu cài đặt thủ công các siêu tham số như suy giảm tốc độ học tập hoặc hệ số động lượng, giúp sử dụng dễ dàng hơn các kỹ thuật tối ưu hóa khác.
 
 Cách hoạt động:
-	*Khởi tạo:
-	Khởi tạo các tham số (ước tính thời điểm ban đầu), (ước tính thời điểm thô thứ hai ban đầu).
- 
-	*Đặt t = 0 (bộ đếm lặp)
-	Chọn siêu tham số: α (tốc độ học), β_(1 )(tốc độ phân rã theo cấp số nhân cho ước tính khoảnh khắc đầu tiên), β_(2 ) tốc độ phân rã theo cấp số nhân cho ước tính mô men thô thứ hai), ϵ (hằng số nhỏ để ổn định số).
- 
-	*Tính toán độ dốc:
-	Tại mỗi lần lặp t, hãy tính độ dốc của hàm chi phí đối với các tham số.
- 
-	*Cập nhật ước tính thời điểm đầu tiên:
-	Cập nhật ước tính thời điểm đầu tiên (momentum term):
+*Khởi tạo:
+Khởi tạo các tham số (ước tính thời điểm ban đầu), (ước tính thời điểm thô thứ hai ban đầu).
+*Đặt t = 0 (bộ đếm lặp)
+Chọn siêu tham số: α (tốc độ học), β_(1 )(tốc độ phân rã theo cấp số nhân cho ước tính khoảnh khắc đầu tiên), β_(2 ) tốc độ phân rã theo cấp số nhân cho ước tính mô men thô thứ hai), ϵ (hằng số nhỏ để ổn định số).
+*Tính toán độ dốc:
+Tại mỗi lần lặp t, hãy tính độ dốc của hàm chi phí đối với các tham số.
+*Cập nhật ước tính thời điểm đầu tiên:
+Cập nhật ước tính thời điểm đầu tiên (momentum term):
  ![image](https://github.com/loiloi26/CuoiKi_MachineLearning/assets/94375939/d3de1e7f-9e77-4eb6-ab9b-0fa94cff6edf)
 
 
